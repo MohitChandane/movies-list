@@ -57,4 +57,4 @@ export class AllMoviesComponent implements OnInit {
     }
   }
 
-
+}
