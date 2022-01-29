@@ -1,0 +1,55 @@
+
+<div class="container" >
+  <div class="row">
+    <div class="col-sm-6" >
+      <div>Popular Movies
+      </div>
+      <div>
+        <!-- <ngx-shimmer-loading></ngx-shimmer-loading> -->
+      </div>
+      <i class="fa fa-refresh" aria-hidden="true"></i>
+      <div (scroll)="onScroll($event)">
+            <table  class="table table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Movie Name</th>
+                  <th scope="col">Release Date</th>
+                  <th scope="col">Rating</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of extractedMovies,let i = index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{item.name}}</td>
+                  <td>{{item.date}}</td>
+                  <td>{{item.rating}}</td>
+                </tr>
+              </tbody>
+            </table></div>
+
+    </div>
+    <div class="col-sm-6">
+      <div>Top Rated Movies</div>
+      <i class="fa fa-refresh" aria-hidden="true"></i>
+      <table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Movie Name</th>
+            <th scope="col">Release Date</th>
+            <th scope="col">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of extractedTopRatedMovies,let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{item.name}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.rating}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
